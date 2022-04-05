@@ -1,5 +1,3 @@
-import "./App.scss";
-
 function App() {
   return <h1>Dad Jokes</h1>;
 }
