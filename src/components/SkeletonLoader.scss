@@ -1,0 +1,23 @@
+.skeleton-loader {
+  display: block;
+  width: 100%;
+  height: 1.5rem;
+  margin: .5rem auto;
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 80%
+    ),
+    #dfe6e9;
+  background-repeat: repeat-y;
+  background-size: 50px 500px;
+  background-position: 0 0;
+  animation: loading 1s infinite;
+};
+
+@keyframes loading {
+  to {
+    background-position: 140% 0, 0, 0;
+  }
+}
