@@ -1,7 +1,7 @@
 import "./SkeletonLoader.scss";
 
 const SkeletonLoader = () => (
-  <div>
+  <div className="skeleton-container">
     <span className="skeleton-loader" />
     <span className="skeleton-loader" />
     <span className="skeleton-loader" />
