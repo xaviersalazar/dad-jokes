@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button, Container, Text } from "@nextui-org/react";
 import SkeletonLoader from "./components/SkeletonLoader";
+import confetti from "canvas-confetti";
 import useAxios from "./hooks/useAxios";
 
 function App() {
@@ -19,23 +20,31 @@ function App() {
     }
   }, [response]);
 
+  const doConfetti = () => {
+    confetti({
+      zIndex: 999,
+      particleCount: 200,
+      spread: 70,
+    });
+  };
+
   return (
     <Container fluid css={{ textAlign: "center" }}>
-      <Text weight="thin">Need a Dad Joke? Generate one below</Text>
+      <Text weight="thin" css={{ marginBottom: "3rem" }}>
+        Need a dad joke? Generate one below
+      </Text>
       {loading ? (
         <SkeletonLoader />
       ) : (
-        <Text
-          h2
-          weight="black"
-          css={{
-            margin: "8rem 0",
-          }}
-        >
+        <Text h2 weight="black">
           {joke}
         </Text>
       )}
-      <Button color="gradient" css={{ margin: "2rem auto" }}>
+      <Button
+        color="gradient"
+        css={{ margin: "3rem auto 0 auto" }}
+        onClick={doConfetti}
+      >
         Random dad joke
       </Button>
     </Container>
