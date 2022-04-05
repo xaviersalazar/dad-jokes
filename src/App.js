@@ -3,6 +3,7 @@ import { Button, Container, Text } from "@nextui-org/react";
 import SkeletonLoader from "./components/SkeletonLoader";
 import confetti from "canvas-confetti";
 import useAxios from "./hooks/useAxios";
+import "./App.scss";
 
 function App() {
   const { response, loading, getAnother } = useAxios();
@@ -30,7 +31,7 @@ function App() {
 
   return (
     <Container fluid css={{ textAlign: "center" }}>
-      <Text weight="thin" css={{ marginBottom: "3rem" }}>
+      <Text className="heading" weight="thin">
         Need a dad joke? Generate one below
       </Text>
       {loading ? (

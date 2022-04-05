@@ -1,0 +1,15 @@
+.heading {
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .heading {
+    margin-bottom: 8rem;
+  }
+}
