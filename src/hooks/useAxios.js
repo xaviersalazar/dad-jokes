@@ -23,7 +23,9 @@ const useAxios = () => {
     fetchJoke();
   }, []);
 
-  return { response, error, loading };
+  const getAnother = () => fetchJoke();
+
+  return { response, error, loading, getAnother };
 };
 
 export default useAxios;

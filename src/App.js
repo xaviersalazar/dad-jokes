@@ -5,7 +5,7 @@ import confetti from "canvas-confetti";
 import useAxios from "./hooks/useAxios";
 
 function App() {
-  const { response, loading } = useAxios();
+  const { response, loading, getAnother } = useAxios();
   const [joke, setJoke] = useState(null);
 
   useEffect(() => {
@@ -23,8 +23,8 @@ function App() {
   const doConfetti = () => {
     confetti({
       zIndex: 999,
-      particleCount: 200,
-      spread: 70,
+      particleCount: 100,
+      spread: 60,
     });
   };
 
@@ -43,7 +43,10 @@ function App() {
       <Button
         color="gradient"
         css={{ margin: "3rem auto 0 auto" }}
-        onClick={doConfetti}
+        onClick={() => {
+          getAnother();
+          doConfetti();
+        }}
       >
         Random dad joke
       </Button>
